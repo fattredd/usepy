@@ -37,7 +37,7 @@ showColors()
 	It shows the effect, as well as the escape character to
 	use it. See colors for usage of these strings.
 
-opt()
+opt() - by mrtransisteur
 	A one time pad. text is a string that will be en/decrypted.
 	key is a list of integers. encrypting is True if encoding,
 	false if decoding
