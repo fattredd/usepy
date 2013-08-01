@@ -59,16 +59,19 @@ colors = {'pink': '\033[95m', # for use with stdout. always end with color['blac
 			'red': '\033[91m',
 			'black': '\033[0m',
 			'res': '\033[0m'}
+
 def showColors():
 	i=0
 	while i<110:
-		sys.stdout.write('\033['+str(i)+'mABCDEFG - '+str(i)+'\033[0m\n')
+		sys.stdout.write('\033['+str(i)+'mABCDEFG - \\033[+str(i)+'m\033[0m\n')
 		sys.stdout.flush()
 		time.sleep(0.1)
 		i+=1
-	sys.stdout.write(colors['black']+'\\033[#m\n')
+	sys.stdout.write(colors['black'])
 
-def p(m,k,d=1): #One Time Pad. ('text', listOfNum/range(), True if decrypting)
-	return "".join([chr((ord(c)-ord('a')+i*(-1)**d)%26 + ord('a')) for c,i in zip(m,k)])
+def otp(text,key,encrypting=1): #One Time Pad. ('text', listOfNum/range(), True if encrypting)
+	return "".join([chr((ord(c)-ord('a')+i*(-1)**encrypting)%26 + ord('a'))\
+		for c,i in zip(text,key)])
+
 
 
