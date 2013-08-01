@@ -1,6 +1,11 @@
-#
+################
 # Useful Funcs #
-#
+################
+# Please note that I didn't write all of these scripts.
+# I mearly assembled them. If you have a problem with
+# your script being used/want credit, you can always
+# email me at fattredd@gmail.com
+
 import itertools
 import sys
 import time
