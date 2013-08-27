@@ -42,3 +42,32 @@ opt(text, key, encrypting=True)
 	key is a list of integers. encrypting is True if encoding,
 	false if decoding. Please note that this shouldn't be used
 	in production.
+
+cdh(dir)
+	Change the working directory relative to /home. This function
+	works on Windows (cygwin64) and Linux.
+	Shortcuts:
+		'.books':'jack/txt/books'
+		'.txt':'jack/txt'
+		'.jack':'jack'
+		'.py':'jack/py'
+		'.':''
+		'/':'..'
+		'':'jack'
+
+analyze(txt [, dict={}])
+	Analyze the letter distribution in a text. Returns a dict of
+			the used letters in the form; dict[\'letter\']=amount
+		txt - The string to be analyzed
+		dict - The dictionary to add to. Not required.
+
+disp(dict [, **kwargs])
+	Create a graph from a dictionary that associates a key with an amount
+		Accepted kwargs:
+		color - default 'r'
+		width - default 0.25
+		ylabel - default 'amount'
+		title - default 'Letter Breakdown'
+
+dirAnalyze([dir='.'])
+	Analyze all .txt files in a directory
