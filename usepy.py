@@ -30,7 +30,7 @@ def spin():
 		sys.stdout.flush()
 		time.sleep(0.1)
 
-def fonetic(pword=''):
+def phonetic(pword=''):
 	'''Returns a string of the pword as phonetic'''
 	if pword == '':
 		pword = 'br549ZQR'
