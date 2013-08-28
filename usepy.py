@@ -32,7 +32,7 @@ def spin():
 
 def fonetic(pword=''):
 	'''Returns a string of the pword as phonetic'''
-	if pword = '':
+	if pword == '':
 		pword = 'br549ZQR'
 		print 'pword left blank. Using', pword, 'instead'
 	spacer = " "    # character to use between words.
