@@ -12,8 +12,6 @@ import time
 import random
 import os
 import platform
-import numpy as np # Used only in disp()
-import matplotlib.pylab as plt # Used only in disp()
 
 def randInts():
 	'''Uses sys.stdout.write() to produce a neverending stream of random
@@ -74,7 +72,7 @@ def showColors():
 	'''Shows all possible colors to use with sys.stdout.write()'''
 	i=0
 	while i<110:
-		sys.stdout.write('\033['+str(i)+'mABCDEFG - \\033[+str(i)+'m\033[0m\n')
+		sys.stdout.write('\033['+str(i)+'mABCDEFG - \\033['+str(i)+'m\033[0m\n')
 		sys.stdout.flush()
 		time.sleep(0.1)
 		i+=1
@@ -137,6 +135,8 @@ def disp(dict, **kwargs):
 		\twidth - default 0.25
 		\tylabel - default 'amount'
 		\ttitle - default 'Letter Breakdown\''''
+	import numpy as np # Used only in disp()
+	import matplotlib.pylab as plt # Used only in disp()
 	if 'color' in kwargs:
 		color = kwargs['color']
 	else:
@@ -166,7 +166,8 @@ def disp(dict, **kwargs):
 	plt.yticks(np.arange(0,max(data),max(data)/10))
 	plt.show()
 
-def dirAnalyze(dir='.'): '''Analyze .txt files in a directory'''
+def dirAnalyze(dir='.'):
+	'''Analyze .txt files in a directory'''
 	masterDict={}
 	if os.listdir('dir') == []:
 		return {}
