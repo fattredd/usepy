@@ -118,4 +118,4 @@ def vertical(word):
 		sys.stdout.write('\n')
 
 if __name__ == '__main__':
-	horizontal(sys.argv[1])
+	horizontal(sys.argv[1:])

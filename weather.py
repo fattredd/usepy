@@ -27,3 +27,9 @@ def curWeather(loc='Altoona,PA'):
 	info = urllib2.urlopen(url).read()
 	d = json.loads(info)
 	return d
+
+if __name__ == '__main__':
+	import sys
+	weather = curWeather(sys.argv[1])
+	sys.stdout.write(weather)
+	sys.stdout.flush()

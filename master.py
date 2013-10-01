@@ -1,7 +1,8 @@
-import pickle, sys
+import pickle
 s = []
 for arg in sys.argv:
 	s.append(arg)
+
 f=open(s[1],'r')
 r=f.read()
 f.close()
@@ -23,4 +24,9 @@ for li in lex:
 	master.append(line)
 
 q=pickle.dumps(master)
-sys.stdout.write(q)
+if s[2]:
+	f=open(s[2],'w+')
+	f.write(q)
+	f.close()
+else:
+	sys.stdout.write(q)

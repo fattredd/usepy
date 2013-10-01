@@ -46,19 +46,4 @@ def pour(output=False):
 			for let2 in lets2:
 				name += os.listdir(let1+'\\'+let2)
 	return names
-
-import smtplib
-from email.mime.text import MIMEText
-def send(emails, message, subject=''):
-	for email in emails:
-		msg = MIMEText(message)
-		msg['Subject'] = subject
-		msg['From'] = 'anonymous@glo.bal'
-		msg['To'] = email
-		s = smtplib.SMTP('tr10g04.aset.psu.edu')
-		s.sendmail('anonymous@gol.bal', email, msg.as_string())
-		s.quit()
-		print 'Sent to', email
-
-
  

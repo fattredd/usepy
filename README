@@ -125,5 +125,53 @@ ppDeck(deck)
 	Use stdout to return the deck, line by line
 		deck - a list of cards
 
+***************
+** master.py ** Create a pickle from a banner
+***************
+Usage:
+$ python master.py READFILE [WRITEFILE]
+	Read a banner from READFILE, then output to
+	WRITEFILE if assigned. If not, use stdout to
+	print the pickled data
 
+***************
+** banner.py ** Create a nammer from a string.
+***************
+Usage:
+$ python banner.py TEXT
+	Create a banner of the given TEXT and return it
+	with stdout
 
+horizontal(text)
+	uses stdout to return a horizontal banner
+		text - the string to convert
+
+vertical(text)
+	uses stdout to return a vertical banner
+		text - the string to convert
+
+*******************
+** mandelbrot.py ** Create an image of a Mandelbrot Set
+*******************
+Usage:
+$ python mandelbrot.py
+	Generates and saves a Mandelbrot Set as M.bmp
+
+****************
+** weather.py ** Use openweathermap.org's API for weather
+****************
+Usage:
+$ python weather.py LOCATION
+	Uses stdout to return the following:
+		- Temp
+			- Current
+			- Min
+			- Max
+		- Sunrise time
+		- Sunset time
+
+curWeather(location)
+	Returns a custom object the includes the current
+	temp, max temp, min temp, sunrise, and sunset
+		location - a location (string) in the form of a
+			zip code, City,State, or coordinates
