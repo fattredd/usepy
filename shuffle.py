@@ -7,18 +7,18 @@ def shuffle(deck, piles=5, times=1, disp=False):
 	times=1 - repeat how many times
 	disp=False - if True, print result, otherwise return it
 	'''
+	out = []
 	for time in range(times):
 		pile = []
 		for x in range(piles):
 			pile.append([])
 		for num, card in enumerate(deck):
 			pile[num%piles].append(card)
-		deck = joinLists(pile)
+		out = joinLists(pile)
 	if disp:
-		from pprint import pprint
-		pprint(deck)
+		ppDeck(out)
 	else:
-		return deck
+		return out
 
 def joinLists(l):
 	'''
@@ -37,7 +37,6 @@ def createDeck(**kwargs):
 	\t-instant
 	\t-sorcery
 	\t-creature
-	In that order.
 	'''
 	if 'land' in kwargs:
 		land = kwargs['land']
@@ -69,3 +68,40 @@ def createDeck(**kwargs):
 			out += 'creature'
 		deck.append(str(out))
 	return deck
+
+def ppDeck(allEm):
+	import sys
+	out = '\n'.join(allEm)
+	sys.stdout.write(out)
+	sys.stdout.flush()
+	#print(out)
+
+if __name__ == '__main__':
+	import sys, argparse
+	parser = argparse.ArgumentParser(description='Grab them cards')
+	parser.add_argument('land', metavar='LANDS', type=int)
+	parser.add_argument('instant', metavar='INSTANT', type=int)
+	parser.add_argument('sorcery', metavar='SORCERY', type=int)
+	parser.add_argument('creature', metavar='CREATURE', type=int)
+	parser.add_argument('piles', type=int, metavar='PILES')
+	parser.add_argument('times', type=int, metavar='TIMES')
+	parser.set_defaults(land=0,instant=0,sorcery=0,creature=0,
+						piles=5,times=1)
+	args = parser.parse_args()
+	deck = createDeck(land=args.land,instant=args.instant,
+					sorcery=args.sorcery, creature=args.creature)
+	sys.stdout.write('''\n\
+	**************
+	** Original **
+	**************\n\n''')
+	sys.stdout.flush()
+	ppDeck(deck)
+	deck2 = shuffle(deck, args.piles, args.times)
+	sys.stdout.write('''\n\n\
+	**************
+	** Shuffled **
+	**************
+	Into %s piles, and shuffled %s times\n\n
+	'''%(args.piles,args.times))
+	sys.stdout.flush()
+	ppDeck(deck2)
