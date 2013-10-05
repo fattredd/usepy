@@ -2,7 +2,7 @@
 ################
 # Useful Funcs #
 ################
-This is a compelation of scripts that I've written/collected
+This is a compilation of scripts that I've written/collected
 that I've used more than once. Some are just for fun, some
 are just plain useful.
 
@@ -27,7 +27,7 @@ spin()
 	Should be modified for any real use.
 
 fonetic(pword):
-	pword is a string. returns the phoneticly spelled out
+	pword is a string. returns the phonetically spelled out
 	version of the string.
 
 colors
@@ -135,7 +135,7 @@ $ python master.py READFILE [WRITEFILE]
 	print the pickled data
 
 ***************
-** banner.py ** Create a nammer from a string.
+** banner.py ** Create a banner from a string.
 ***************
 Usage:
 $ python banner.py TEXT
