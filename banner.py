@@ -1,7 +1,7 @@
 import sys
 
 letterforms = '''\
-	   |       |       |       |       |       |       | |
+       |       |       |       |       |       |       | |
   XXX  |  XXX  |  XXX  |   X   |       |  XXX  |  XXX  |!|
   X  X |  X  X |  X  X |       |       |       |       |"|
   X X  |  X X  |XXXXXXX|  X X  |XXXXXXX|  X X  |  X X  |#|
@@ -11,12 +11,12 @@ XXX   X|X X  X |XXX X  |   X   |  X XXX| X  X X|X   XXX|%|
   XXX  |  XXX  |   X   |  X    |       |       |       |'|
    XX  |  X    | X     | X     | X     |  X    |   XX  |(|
   XX   |    X  |     X |     X |     X |    X  |  XX   |)|
-	   | X   X |  X X  |XXXXXXX|  X X  | X   X |       |*|
-	   |   X   |   X   | XXXXX |   X   |   X   |       |+|
-	   |       |       |  XXX  |  XXX  |   X   |  X    |,|
-	   |       |       | XXXXX |       |       |       |-|
-	   |       |       |       |  XXX  |  XXX  |  XXX  |.|
-	  X|     X |    X  |   X   |  X    | X     |X      |/|
+       | X   X |  X X  |XXXXXXX|  X X  | X   X |       |*|
+       |   X   |   X   | XXXXX |   X   |   X   |       |+|
+       |       |       |  XXX  |  XXX  |   X   |  X    |,|
+       |       |       | XXXXX |       |       |       |-|
+       |       |       |       |  XXX  |  XXX  |  XXX  |.|
+      X|     X |    X  |   X   |  X    | X     |X      |/|
   XXX  | X   X |X     X|X     X|X     X| X   X |  XXX  |0|
    X   |  XX   | X X   |   X   |   X   |   X   | XXXXX |1|
  XXXXX |X     X|      X| XXXXX |X      |X      |XXXXXXX|2|
@@ -29,8 +29,8 @@ XXXXXX |X    X |    X  |   X   |  X    |  X    |  X    |7|
  XXXXX |X     X|X     X| XXXXXX|      X|X     X| XXXXX |9|
    X   |  XXX  |   X   |       |   X   |  XXX  |   X   |:|
   XXX  |  XXX  |       |  XXX  |  XXX  |   X   |  X    |;|
-	X  |   X   |  X    | X     |  X    |   X   |    X  |<|
-	   |       |XXXXXXX|       |XXXXXXX|       |       |=|
+    X  |   X   |  X    | X     |  X    |   X   |    X  |<|
+       |       |XXXXXXX|       |XXXXXXX|       |       |=|
   X    |   X   |    X  |     X |    X  |   X   |  X    |>|
  XXXXX |X     X|      X|   XXX |   X   |       |   X   |?|
  XXXXX |X     X|X XXX X|X XXX X|X XXXX |X      | XXXXX |@|
@@ -43,7 +43,7 @@ XXXXXXX|X      |X      |XXXXX  |X      |X      |X      |F|
  XXXXX |X     X|X      |X  XXXX|X     X|X     X| XXXXX |G|
 X     X|X     X|X     X|XXXXXXX|X     X|X     X|X     X|H|
   XXX  |   X   |   X   |   X   |   X   |   X   |  XXX  |I|
-	  X|      X|      X|      X|X     X|X     X| XXXXX |J|
+      X|      X|      X|      X|X     X|X     X| XXXXX |J|
 X    X |X   X  |X  X   |XXX    |X  X   |X   X  |X    X |K|
 X      |X      |X      |X      |X      |X      |XXXXXXX|L|
 X     X|XX   XX|X X X X|X  X  X|X     X|X     X|X     X|M|
@@ -64,34 +64,34 @@ XXXXXXX|     X |    X  |   X   |  X    | X     |XXXXXXX|Z|
 X      | X     |  X    |   X   |    X  |     X |      X|\|
  XXXXX |     X |     X |     X |     X |     X | XXXXX |]|
    X   |  X X  | X   X |       |       |       |       |^|
-	   |       |       |       |       |       |XXXXXXX|_|
-	   |  XXX  |  XXX  |   X   |    X  |       |       |`|
-	   |   XX  |  X  X | X    X| XXXXXX| X    X| X    X|a|
-	   | XXXXX | X    X| XXXXX | X    X| X    X| XXXXX |b|
-	   |  XXXX | X    X| X     | X     | X    X|  XXXX |c|
-	   | XXXXX | X    X| X    X| X    X| X    X| XXXXX |d|
-	   | XXXXXX| X     | XXXXX | X     | X     | XXXXXX|e|
-	   | XXXXXX| X     | XXXXX | X     | X     | X     |f|
-	   |  XXXX | X    X| X     | X  XXX| X    X|  XXXX |g|
-	   | X    X| X    X| XXXXXX| X    X| X    X| X    X|h|
-	   |    X  |    X  |    X  |    X  |    X  |    X  |i|
-	   |      X|      X|      X|      X| X    X|  XXXX |j|
-	   | X    X| X   X | XXXX  | X  X  | X   X | X    X|k|
-	   | X     | X     | X     | X     | X     | XXXXXX|l|
-	   | X    X| XX  XX| X XX X| X    X| X    X| X    X|m|
-	   | X    X| XX   X| X X  X| X  X X| X   XX| X    X|n|
-	   |  XXXX | X    X| X    X| X    X| X    X|  XXXX |o|
-	   | XXXXX | X    X| X    X| XXXXX | X     | X     |p|
-	   |  XXXX | X    X| X    X| X  X X| X   X |  XXX X|q|
-	   | XXXXX | X    X| X    X| XXXXX | X   X | X    X|r|
-	   |  XXXX | X     |  XXXX |      X| X    X|  XXXX |s|
-	   |  XXXXX|    X  |    X  |    X  |    X  |    X  |t|
-	   | X    X| X    X| X    X| X    X| X    X|  XXXX |u|
-	   | X    X| X    X| X    X| X    X|  X  X |   XX  |v|
-	   | X    X| X    X| X    X| X XX X| XX  XX| X    X|w|
-	   | X    X|  X  X |   XX  |   XX  |  X  X | X    X|x|
-	   |  X   X|   X X |    X  |    X  |    X  |    X  |y|
-	   | XXXXXX|     X |    X  |   X   |  X    | XXXXXX|z|
+       |       |       |       |       |       |XXXXXXX|_|
+       |  XXX  |  XXX  |   X   |    X  |       |       |`|
+       |   XX  |  X  X | X    X| XXXXXX| X    X| X    X|a|
+       | XXXXX | X    X| XXXXX | X    X| X    X| XXXXX |b|
+       |  XXXX | X    X| X     | X     | X    X|  XXXX |c|
+       | XXXXX | X    X| X    X| X    X| X    X| XXXXX |d|
+       | XXXXXX| X     | XXXXX | X     | X     | XXXXXX|e|
+       | XXXXXX| X     | XXXXX | X     | X     | X     |f|
+       |  XXXX | X    X| X     | X  XXX| X    X|  XXXX |g|
+       | X    X| X    X| XXXXXX| X    X| X    X| X    X|h|
+       |    X  |    X  |    X  |    X  |    X  |    X  |i|
+       |      X|      X|      X|      X| X    X|  XXXX |j|
+       | X    X| X   X | XXXX  | X  X  | X   X | X    X|k|
+       | X     | X     | X     | X     | X     | XXXXXX|l|
+       | X    X| XX  XX| X XX X| X    X| X    X| X    X|m|
+       | X    X| XX   X| X X  X| X  X X| X   XX| X    X|n|
+       |  XXXX | X    X| X    X| X    X| X    X|  XXXX |o|
+       | XXXXX | X    X| X    X| XXXXX | X     | X     |p|
+       |  XXXX | X    X| X    X| X  X X| X   X |  XXX X|q|
+       | XXXXX | X    X| X    X| XXXXX | X   X | X    X|r|
+       |  XXXX | X     |  XXXX |      X| X    X|  XXXX |s|
+       |  XXXXX|    X  |    X  |    X  |    X  |    X  |t|
+       | X    X| X    X| X    X| X    X| X    X|  XXXX |u|
+       | X    X| X    X| X    X| X    X|  X  X |   XX  |v|
+       | X    X| X    X| X    X| X XX X| XX  XX| X    X|w|
+       | X    X|  X  X |   XX  |   XX  |  X  X | X    X|x|
+       |  X   X|   X X |    X  |    X  |    X  |    X  |y|
+       | XXXXXX|     X |    X  |   X   |  X    | XXXXXX|z|
   XXX  | X     | X     |XX     | X     | X     |  XXX  |{|
    X   |   X   |   X   |       |   X   |   X   |   X   |||
   XXX  |     X |     X |     XX|     X |     X |  XXX  |}|
@@ -106,16 +106,17 @@ for form in letterforms:
 ROWS = len(table.values()[0])
 
 def horizontal(word):
+	out = ''
 	for row in range(ROWS):
 		for c in word:
-			sys.stdout.write(table[c][row])
-		sys.stdout.write('\n')
+			out += table[c][row]
+		out += '\n'
+	return out
 
 def vertical(word):
+	out = ''
 	for c in word:
 		for row in zip(*table[c]):
-			sys.stdout.write(' '.join(reversed(row)))
-		sys.stdout.write('\n')
-
-if __name__ == '__main__':
-	horizontal(sys.argv[1:])
+			out += ' '.join(reversed(row))
+		out += '\n'
+	return out

@@ -1,32 +1,24 @@
 import pickle
-s = []
-for arg in sys.argv:
-	s.append(arg)
 
-f=open(s[1],'r')
-r=f.read()
+f = open(sys.argv[1],'r')
+r = f.read()
 f.close()
-lex=r.split('\n')
-master=[]
+lex = r.split('\n')
+out = []
 
 for li in lex:
-	line=[]
-	curChar=' '
-	buffL=[curChar,0]
+	line = []
+	currentChar = ' '
+	buffL = [currentChar,0]
 	for char in li:
-		if char == curChar:
+		if char == currentChar:
 			buffL[1] += 1
 		else:
 			line.append((buffL[0],buffL[1]))
-			curChar = char
-			buffL = [curChar, 1]
+			currentChar = char
+			buffL = [currentChar, 1]
 	line.append((buffL[0],buffL[1]))
-	master.append(line)
+	out.append(line)
 
-q=pickle.dumps(master)
-if s[2]:
-	f=open(s[2],'w+')
-	f.write(q)
-	f.close()
-else:
-	sys.stdout.write(q)
+q = pickle.dumps(out)
+sys.stdout.write(q)
