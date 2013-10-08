@@ -1,5 +1,6 @@
 '''
 Compilation of banner.py, master.py, and printBan.py
+BUT BETTER
 '''
 import sys, pickle, argparse
 
@@ -107,6 +108,7 @@ for form in letterforms:
 ROWS = len(table.values()[0])
 
 def horizontal(word):
+	'''Return a horizontal banner string'''
 	out = ''
 	for row in range(ROWS):
 		for c in word:
@@ -115,6 +117,7 @@ def horizontal(word):
 	return out
 
 def vertical(word):
+	'''Return a vertical banner string'''
 	out = ''
 	for c in word:
 		for row in zip(*table[c]):
@@ -122,7 +125,11 @@ def vertical(word):
 		out += '\n'
 	return out
 
-def listPickle(banner):
+def bannerToList(banner):
+	'''Return a list generated from a banner.
+	\tThe form is a list of tuples, ('#',2), where the
+	\t'#' is the character, and the 2 is the number of
+	\tconsecutive characters'''
 	bannerL = banner.replace('\r','').split('\n')
 	out = []
 	for line in bannerL:
@@ -141,6 +148,7 @@ def listPickle(banner):
 	return out
 
 def pBan(data):
+	'''Return data from a banner-style list'''
 	out = ''
 	for line in data:
 		for char, count in line:
@@ -149,6 +157,7 @@ def pBan(data):
 	return out
 
 def pLoad(fname):
+	'''Return data from a pickled file'''
 	f = open(fname)
 	out = pickle.loads(f.read())
 	f.close()
@@ -206,12 +215,12 @@ if __name__ == '__main__':
 				out = text
 			elif args.inputType == 'r':
 				data = horizontal(text)
-				out = pickle.dumps(listPickle(data))
+				out = pickle.dumps(bannerToList(data))
 		elif args.outputType == 'l':
 			if args.inputType == 'p':
 				out = pickle.loads(text)
 			elif args.inputType == 'r':
-				out = listPickle(horizontal(text))
+				out = bannerToList(horizontal(text))
 			else:
 				out = text
 		if args.pp:

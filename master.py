@@ -1,3 +1,6 @@
+################
+## DEPRICATED ##
+################
 import pickle
 
 f = open(sys.argv[1],'r')

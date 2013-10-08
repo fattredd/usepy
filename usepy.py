@@ -177,3 +177,11 @@ def dirAnalyze(dir='.'):
 				content = f.read()
 			masterDict = analyze(content, masterDict)
 	return masterDict
+
+def dir2(thing):
+	'''Like dir(), but without all the default attributes'''
+	out = []
+	for x in dir(thing):
+		if not '__' in x:
+			out.append(x)
+	return out

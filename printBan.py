@@ -1,3 +1,6 @@
+################
+## DEPRICATED ##
+################
 import sys, pickle
 
 def pBan(data):
