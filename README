@@ -190,6 +190,7 @@ bannerToList(banner)
 			horizontal(), or any other string or
 			whatever
 
+
 ****************
 ** master.py  ** Create a pickle from a banner
 ** DEPRICATED ** Use newban.py instead
