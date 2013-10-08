@@ -147,8 +147,8 @@ curWeather(location)
 *************** decode 'em, (un)pickle 'em, and save 'em
 Usage:
 $ python newban.py newban.py [-h] [--text TEXT] [--filein READFILE]
-					[--fileout default=stdout] [--inputType {r,p}]
-					[--outputType {r,b,l,p}] [--pprint]
+		[--fileout default=stdout] [--inputType {r,p}]
+		[--outputType {r,b,l,p}] [--pprint]
 	Generate a banner, pickle/unpickle it, output to a file
 	or stdout, do all kinds of other banner-related junk
 	optional arguments:
